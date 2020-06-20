@@ -1,5 +1,6 @@
 # coding: utf-8
 require_relative './greeter'
+require_relative './foo'
 
 RSpec.describe Kouba do
   it "has a version number" do
@@ -7,25 +8,25 @@ RSpec.describe Kouba do
   end
 
   it 'instantiates according to the config' do
-    config = {
+    expect(Foo.create(
+      xxx: 'bar'
+    ).message).to eql('foo')
+
+    greeter = Greeter.create(
       greeter: 'japanese',
       options: {
         suffix: '!!'
       }
-    }
-
-    greeter = Greeter.create(config)
+    )
 
     expect(greeter.greet('foo')).to eql('こんにちは、foo!!')
 
-    config = {
+    greeter = Greeter.create(
       greeter: 'english',
       options: {
         prefix: '!!!'
       }
-    }
-
-    greeter = Greeter.create(config)
+    )
 
     expect(greeter.greet('foo')).to eql('!!!hello, foo')
   end
