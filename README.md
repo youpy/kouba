@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-see rspec/
+see https://github.com/youpy/kouba/tree/master/spec
 
 ## Development
 
