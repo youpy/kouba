@@ -1,4 +1,4 @@
-# Kouba
+# Kouba ![Ruby](https://github.com/youpy/kouba/workflows/Ruby/badge.svg)
 
 kouba(工場) offers an implementation of simple factory pattern.
 
