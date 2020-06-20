@@ -8,7 +8,7 @@ RSpec.describe Kouba do
 
   it 'instantiates according to the config' do
     config = {
-      name: 'japanese',
+      greeter: 'japanese',
       options: {
         suffix: '!!'
       }
@@ -19,7 +19,7 @@ RSpec.describe Kouba do
     expect(greeter.greet('foo')).to eql('こんにちは、foo!!')
 
     config = {
-      name: 'english',
+      greeter: 'english',
       options: {
         prefix: '!!!'
       }

@@ -3,8 +3,11 @@ require "dry/inflector"
 module Kouba
   module SimpleFactory
     def self.included(mod)
-      mod.send(:module_function, :create)
-      mod.send(:module_function, :find)
+      mod.send(:module_function, :create, :find, :name_key)
+    end
+
+    def name_key(key)
+      @name_key = key
     end
 
     def find(name)
@@ -16,7 +19,7 @@ module Kouba
     end
 
     def create(config)
-      (find(config[:name])).new(config[:options])
+      (find(config[@name_key ? @name_key.to_sym : :name])).new(config[:options])
     end
   end
 end
