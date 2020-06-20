@@ -1,15 +1,15 @@
 module Greeter
   class English
     def initialize(options = {})
-      @suffix = options[:suffix]
+      @prefix = options[:prefix]
     end
 
     def greet(name)
-      'hello, ' + name + suffix
+      prefix + 'hello, ' + name
     end
 
     private
 
-    attr_reader :suffix
+    attr_reader :prefix
   end
 end

@@ -21,12 +21,12 @@ RSpec.describe Kouba do
     config = {
       name: 'english',
       options: {
-        suffix: '!!!'
+        prefix: '!!!'
       }
     }
 
     greeter = Greeter.create(config)
 
-    expect(greeter.greet('foo')).to eql('hello, foo!!!')
+    expect(greeter.greet('foo')).to eql('!!!hello, foo')
   end
 end
