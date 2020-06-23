@@ -2,7 +2,7 @@
 module Greeter
   class Japanese
     def initialize(options = {})
-      @suffix = options[:suffix]
+      @suffix = options[:suffix] || ''
     end
 
     def greet(name)

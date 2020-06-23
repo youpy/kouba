@@ -19,7 +19,7 @@ module Kouba
     end
 
     def create(config)
-      (find(config[@name_key ? @name_key.to_sym : :name])).new(config[:options])
+      (find(config[@name_key ? @name_key.to_sym : :name])).new(config[:options] || {})
     end
   end
 end

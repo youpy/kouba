@@ -7,7 +7,7 @@ RSpec.describe Kouba do
     expect(Kouba::VERSION).not_to be nil
   end
 
-  it 'instantiates according to the config' do
+  it 'instantiates' do
     expect(Foo.create(
       xxx: 'bar'
     ).message).to eql('foo')
@@ -29,5 +29,15 @@ RSpec.describe Kouba do
     )
 
     expect(greeter.greet('foo')).to eql('!!!hello, foo')
+  end
+
+  context 'without options' do
+    it 'instantiates' do
+      greeter = Greeter.create(
+        greeter: 'japanese'
+      )
+
+      expect(greeter.greet('foo')).to eql('こんにちは、foo')
+    end
   end
 end

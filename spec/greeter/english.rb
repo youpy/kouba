@@ -1,7 +1,7 @@
 module Greeter
   class English
     def initialize(options = {})
-      @prefix = options[:prefix]
+      @prefix = options[:prefix] || ''
     end
 
     def greet(name)
